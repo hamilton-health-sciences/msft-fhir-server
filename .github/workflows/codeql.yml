@@ -24,7 +24,11 @@ jobs:
     - name: Fetch all history for all tags and branches
       run: |
         git fetch --prune --unshallow
-
+        
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.300
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v1
